@@ -3,7 +3,7 @@
  * Plugin Name:       Ideas
  * Plugin URI:        https://github.com/milosz/wp-ideas
  * Description:       Ideas
- * Version:           0.0.1
+ * Version:           0.1.0
  * Requires at least: 5.8
  * Requires PHP:      7.4
  * Author:            Milosz Galazka
