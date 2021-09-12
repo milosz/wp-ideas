@@ -80,15 +80,15 @@ function create_post_type() {
 	);
 
 	$capabilities = array(
-        'edit_post'              => 'administrator',
-        'read_post'              => 'administrator',
-        'delete_post'            => 'administrator',
+		'edit_post'              => 'administrator',
+		'read_post'              => 'administrator',
+		'delete_post'            => 'administrator',
 
-        'edit_posts'             => 'administrator',
-        'edit_others_posts'      => 'administrator',
-        'publish_posts'          => 'administrator',
-        'read_private_posts'     => 'administrator',
-    );
+		'edit_posts'             => 'administrator',
+		'edit_others_posts'      => 'administrator',
+		'publish_posts'          => 'administrator',
+		'read_private_posts'     => 'administrator',
+	);
 
 	$args = array(
 		'labels'                => $labels,
@@ -108,8 +108,8 @@ function create_post_type() {
 		'menu_position'         => 4,
 		'menu_icon'             => 'dashicons-lightbulb',
 
-        'supports'              => array('title', 'editor'),
- 		'taxonomies'            => array('ideas_categories', 'ideas_tags'),
+		'supports'              => array('title', 'editor'),
+		'taxonomies'            => array('ideas_categories', 'ideas_tags'),
 
 		'has_archive'           => false,
 
@@ -119,9 +119,9 @@ function create_post_type() {
 
 		'can_export'            => true,
 
-        'delete_with_user'     => false,
+		'delete_with_user'     => false,
 
-        'capabilities'         => $capabilities,
+		'capabilities'         => $capabilities,
 	);
 	register_post_type('idea', $args);
 
@@ -131,11 +131,11 @@ add_action('init', __NAMESPACE__ . '\create_post_type', 0);
 // Set every My Idea to private
 add_filter('wp_insert_post_data', function($post) {
 	if( $post['post_type'] == 'idea' && $post['post_status'] != 'trash') $post['post_status'] = 'private';
-  return $post;
+	return $post;
 });
 
 // Disable rich editor
 add_filter('user_can_richedit', function($default) {
-  if( get_post_type() == 'idea') return false;
-  return $default;
+	if( get_post_type() == 'idea') return false;
+	return $default;
 });
