@@ -130,7 +130,7 @@ add_action('init', __NAMESPACE__ . '\create_post_type', 0);
 
 // Set every My Idea to private
 add_filter('wp_insert_post_data', function($post) {
-  if( $post['post_type'] == 'ideas') $post['post_status'] = 'private';
+	if( $post['post_type'] == 'ideas' && $post['post_status'] != 'trash') $post['post_status'] = 'private';
   return $post;
 });
 
