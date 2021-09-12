@@ -80,14 +80,14 @@ function create_post_type() {
 	);
 
 	$capabilities = array(
-        'edit_post'              => 'update_core',
-        'read_post'              => 'update_core',
-        'delete_post'            => 'update_core',
+        'edit_post'              => 'administrator',
+        'read_post'              => 'administrator',
+        'delete_post'            => 'administrator',
 
-        'edit_posts'             => 'update_core',
-        'edit_others_posts'      => 'update_core',
-        'publish_posts'          => 'update_core',
-        'read_private_posts'     => 'update_core',
+        'edit_posts'             => 'administrator',
+        'edit_others_posts'      => 'administrator',
+        'publish_posts'          => 'administrator',
+        'read_private_posts'     => 'administrator',
     );
 
 	$args = array(
